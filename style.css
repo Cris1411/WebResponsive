@@ -1,0 +1,360 @@
+/* GLOBAL */
+:root {
+    --color-acento: blueviolet;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+    /* al presionar los links scroll */
+    scroll-behavior: smooth;  
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem; /* 1.6rem = 16px */
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 { font-size: 3.7rem;}
+h2 { font-size: 2.7rem;}
+h3 { font-size: 2rem;}
+li { font-size: 2.25rem;}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    background-color: var(--color-acento);
+
+    a {
+        text-transform: uppercase;
+        color: inherit;
+    }
+
+    &:hover {
+        background-color: rgb(102, 33, 165);
+    }
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+/* COMPONENTES */
+header {
+    background-color: rgb(245, 245, 245);
+
+    .logo {
+        margin: 0;
+        padding: 25px 15px;
+        font-weight: bold;
+        font-size: 1.6em;
+        color: var(--color-acento);
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mi-logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 25px;
+
+        a {
+            padding: 5px 12px;
+            font-weight: bold;
+            color: black;
+
+            &:hover {
+                color: var(--color-acento);
+            }
+        }
+    }
+}
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    height: 90vh;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,255,0.5)), url(/img/Notebook-desarrollo.jpg);
+    background-position: center;
+    background-size: cover;
+
+    h1 {
+        color: white;
+    }
+
+    button {
+        font-size: 5vw;
+    }
+}
+
+#somos-proya {
+    .container {
+        text-align: center;
+        padding: 200px 12px;
+    }
+
+    span {
+        color: var(--color-acento);
+    }
+
+    p {
+        font-size: larger;
+    }
+}
+
+#nuestros-programas {
+    background-color: rgb(20, 30, 40);
+    color: white;
+    text-align: center;
+
+    h2 {
+        margin-top: 0;
+        font-size: 3.5rem;
+    }
+
+    .container {
+        padding: 100px 12px;
+    }
+
+    .carta {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+
+        padding: 50px;
+        margin: 20px;
+        border-radius: 15%;
+
+        &:first-child {
+            background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,255,0.5)), url(/img/desarrollo-fe.jpeg);
+        }
+
+        &:nth-child(2) {
+            background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,255,0.5)) ,url(/img/desarrollo-fs.jpeg);
+        }
+
+        &:nth-child(3) {
+            background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,255,0.5)) ,url(/img/desarrollo-py.jpg);
+        }
+    }
+
+    .carta p {
+        display: none;
+    }
+}
+
+#caracteristicas {
+
+    .container {
+        text-align: center;
+        padding: 200px 12px;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    li {
+        margin: 12px 0px;
+        font-weight: bold;
+    }
+}
+
+#aplica-ya {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(30, 30, 30);
+    color: white;
+
+    h2 {
+        font-size: 8.5vw;
+    }
+    button {
+        font-size: 6vw;
+    }
+}
+
+footer {
+    background-color: rgb(230, 230, 230);
+
+    .container {
+        height: 150px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    p {
+        color: rgb(100,100,100);
+        padding: 12px;
+    }
+}
+
+
+/* RESPONSIVE */
+@media (min-width: 720px) {
+    
+    header {
+        position: fixed;
+        width: 100%;
+
+        .container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        nav {
+            flex-direction: row;
+            padding-bottom: 0;
+            padding-right: 30px;
+        }
+    }
+
+    #hero {
+        h1 {
+            font-size: 5rem;
+        }
+    }
+
+    #somos-proya {
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+
+            .img-container {
+                background-image: url(/img/Notebook-IronMan-2.jpeg);
+                background-size: cover;
+                background-position: center;
+                height: 500px;
+                width: 500px;
+            }
+
+            .texto {
+                width: 50%;
+                text-align: initial;
+                padding-left: 30px;
+                max-width: 500px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+    }
+
+    #nuestros-programas {
+
+        h2 {
+            font-size: 4rem;
+        }
+
+        .programas {
+            /* display: grid;
+            grid-template-columns: repeat(3, 1fr); */
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .carta {
+            padding: 15px;
+
+            h3 {
+                margin-top: 0;
+            }
+
+            &:first-child {
+                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2),rgba(0,0,0,0.6), rgba(0,0,0,1)), url(/img/desarrollo-fe.jpeg);
+            }
+
+            &:nth-child(2) {
+                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2),rgba(0,0,0,0.6), rgba(0,0,0,1)), url(/img/desarrollo-fs.jpeg);
+            }
+    
+            &:nth-child(3) {
+                background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2),rgba(0,0,0,0.6), rgba(0,0,0,1)), url(/img/desarrollo-py.jpg);
+            }
+        }
+
+        .carta p {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+    }
+
+    #caracteristicas {
+
+        background-image: url(/img/caracteristicas.png);
+        background-repeat: no-repeat;
+        background-size: 500px 400px;
+        background-position: calc(100vw - 700px) 120px;
+
+        .container {
+            text-align: initial;
+        }
+
+        ul {
+            margin-left: 100px;
+        }
+    }
+
+    #aplica-ya {
+        h2 {
+            font-size: 5rem;
+        }
+
+        button {
+            font-size: 3rem;
+        }
+    }
+
+    footer .container{
+        justify-content: flex-end;
+        padding-right: 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #caracteristicas {
+        background-position-x: calc(100vw - 800px);
+    }
+}
